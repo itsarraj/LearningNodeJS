@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1>Head</h1>
+        <ul>
+            <!-- This is For Loop  -->
+            <% for ( let i = 1 ; i < 7 ; i++) {%>
+            <li><%= i%></li>
+            <%}%>
+        </ul>
+        <!-- This is Variable Declaration for if parameter -->
+        <% var x = false;%>
+        <!-- This is Normal True False  -->
+        <% if (x){%>
+        <p><%=x%></p>
+        <% } else {%>
+        <p><%=x%></p>
+        <%} %>
+
+        <!-- This is HTML Escaped -->
+        <% var x = `
+        <script>
+            alert('Welcome');
+        </script>
+        `;%> <%=x%>
+
+        <!-- This is not Escaped So We are Getting Alert -->
+        <% var x = `
+        <script>
+            alert('Welcome');
+        </script>
+        `;%> <%-x%>
+
+        <!-- This is not Escaped So We are Getting Alert -->
+        <% var x = `
+        <script>
+            alert('Welcome');
+        </script>
+        `;%> <%-x%>
+
+        <ul>
+            <!-- This is you know it , right!  -->
+            <% for ( let i = 1 ; i < 10 ; i++) {%>
+            <li><%-x%></li>
+            <%}%>
+        </ul>
+    </body>
+</html>
