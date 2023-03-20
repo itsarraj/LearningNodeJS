@@ -6,27 +6,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><%= title %></title>
         <style>
-            span {
-                color: #4b00c3;
+            html {
+                box-sizing: border-box;
+                background-color: blueviolet;
             }
-            li {
-                background-color: aqua;
+            span {
+                color: hsl(215, 43%, 95%);
+            }
+            .ulList {
+                list-style: none;
+            }
+            .ListItems {
+                background-color: rgb(26, 62, 141);
                 border: 1px solid grey;
                 margin: 2px;
+                padding: 0 20px;
                 border-radius: 5px;
+                color: aliceblue;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                    sans-serif;
+                font-weight: bold;
+            }
+
+            form input button {
+                display: flex;
+                margin: 5px;
+                padding: 5px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                    sans-serif;
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
         <h1><span>Contact List</span></h1>
         <div>
-            <ul>
-                <% for (let i of contact_list) { %>
-                <li>
-                    <p><%= i.name%></p>
-                    <p><%= i.phone%></p>
-                </li>
-                <% } %>
+            <ul class="ulList">
+                <div>
+                    <% for (let i of contact_list) { %>
+                    <li>
+                        <div class="ListItems">
+                            <p>Name : <%= i.name%></p>
+                            <p>Phone : <%= i.phone%></p>
+                        </div>
+                    </li>
+                    <% } %>
+                </div>
             </ul>
         </div>
 
