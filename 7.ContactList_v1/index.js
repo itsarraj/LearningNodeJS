@@ -9,16 +9,8 @@ app.set('views', path.join(__dirname, 'views')); // This is setup to look for vi
 app.use(express.urlencoded());
 var contactList = [
     {
-        name: 'A',
-        phone: '1',
-    },
-    {
-        name: 'B',
-        phone: '2',
-    },
-    {
-        name: 'C',
-        phone: '3',
+        name: 'Name Example',
+        phone: 'Phone Example',
     },
 ];
 
