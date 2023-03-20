@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+        <style>
+            html {
+                box-sizing: border-box;
+                background-color: blueviolet;
+            }
+            span {
+                color: hsl(215, 43%, 95%);
+            }
+            .ulList {
+                list-style: none;
+            }
+            .ListItems,
+            span {
+                background-color: rgb(26, 62, 141);
+                border: 1px solid rgb(26, 62, 141);
+                margin: 8px;
+                padding: 0 20px;
+                border-radius: 5px;
+                color: aliceblue;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                    sans-serif;
+                font-weight: bold;
+                box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
+                    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+            }
+
+            form input button {
+                display: flex;
+                margin: 5px;
+                padding: 5px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                    sans-serif;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><span>Contact List</span></h1>
+        <div>
+            <ul class="ulList">
+                <div>
+                    <% for (let i of contact_list) { %>
+                    <li>
+                        <div class="ListItems">
+                            <p>Name : <%= i.name%></p>
+                            <p>Phone : <%= i.phone%></p>
+                        </div>
+                    </li>
+                    <% } %>
+                </div>
+            </ul>
+        </div>
+
+        <form action="/create-contact" method="post">
+            <input type="text" name="name" placeholder="Enter Name" required />
+            <input
+                type="number"
+                name="phone"
+                placeholder="Enter Phone"
+                required
+            />
+
+            <button type="submit">Add Contact</button>
+        </form>
+    </body>
+</html>
