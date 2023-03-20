@@ -341,8 +341,7 @@ app.listen(port, function (err) {
     console.log('server listening on port', port);
 });
 
-
-// <----[ 8.MiddleWare ]---->
+// <----[ 9.AccessingStaticFiles ]---->
 const express = require('express');
 const path = require('path');
 const port = 8000;
