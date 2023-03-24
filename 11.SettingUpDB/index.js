@@ -51,27 +51,42 @@ var contactList = [
 ];
 
 app.get('/', function (req, res) {
-    console.log('called from get route controller "/" ');
+    //  {} query parameters
+    Contact.find({}, function (err, contacts) {
+        if (err) {
+            console.log(err);
+            return;
+        }
 
-    return res.render('contact', {
-        title: 'Contact_List',
-        contact_list: contactList,
+        return res.render('contact', {
+            title: 'Contact_List',
+            contact_list: contacts,
+        });
     });
 });
 
 app.get('/practice', function (req, res) {
-    console.log('called from get route controller "/practice" ');
     return res.render('practice', { title: 'Let us play with ejs' });
 });
 
 app.post('/create-contact', function (req, res) {
-    console.log('called from Post route controller "/create-contact" ');
+    // contactList.push(req.body); // contact list pushed in array
 
-    contactList.push(req.body);
-
-    return res.redirect('/');
-    // we can use back for longer urls
-    // return res.redirect('back');
+    // Contact list pushed in database
+    Contact.create(
+        {
+            name: req.body.name,
+            phone: req.body.phone,
+        },
+        function (err, newContact) {
+            if (err) {
+                console.log('error in creating a contact :', err);
+                return;
+            }
+            console.log('**********', newContact);
+            return res.redirect('back');
+        }
+    );
 });
 
 // <-- { For DELETING a CONTACT } -->
