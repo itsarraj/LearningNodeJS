@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+    background-color: blueviolet;
+}
+span {
+    color: hsl(215, 43%, 95%);
+}
+.ulList {
+    list-style: none;
+}
+.ListItems,
+span {
+    background-color: rgb(26, 62, 141);
+    border: 1px solid rgb(26, 62, 141);
+    min-width: 300px;
+    margin: 8px;
+    padding: 0 20px;
+    border-radius: 5px;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
+        rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+
+form input button {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.delete-button {
+    width: 13%;
+    min-width: 107px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0 , 0.1);
+    margin: 8px 8px 20px 8px;
+    padding: 10px 10px;
+    border-radius: 2px 10px 0 0;
+    box-shadow: rgba(60, 66, 87, 0.2) 0px 2px 3px 0px;
+    font-weight: bold;
+    /* box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, */
+        rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+.delete-button i {
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+}
